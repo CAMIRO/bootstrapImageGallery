@@ -1,8 +1,4 @@
- 
-/* The paginator takes an array of links or urls to content. Each url and its corresponding
-file content represent 1 item to paginate. The index is the first item in that list
-of links to be displayed on a page, and the limit is how many items will be displayed
-per page. */
+
 const Paginator = function(links, index, limit) {
 
   this.links = links;
@@ -10,11 +6,7 @@ const Paginator = function(links, index, limit) {
   /* Make sure the limit per page is not greater than the actual amount of items we have or 0 */
   this.limit = (limit <= links.length && limit > 0) ? limit : links.length;
 
-  /* I created my html with JavaScript, but you could easily do this with an HTML
-  template or create your HTML inline and use querySelector to get a reference to it.
-  I thought it would be more portable to use this approach. That being said, All the
-  CSS for these elements is in the pagination.css file. How you style this stuff is
-  up to you. Even without the css, it all works. */
+
   this.html = document.createElement("div");
   this.html.setAttribute("class", "paginator");
   this.html.innerHTML = "<div class = \"paginator-content\"></div><div class = \"paginator-navigator\"><a class = \"paginator-button\">back</a><div class = \"paginator-index\"></div><a class = \"paginator-button\">next</a></div>";
@@ -48,7 +40,7 @@ Paginator.prototype = {
     this.index = new_index;// The new index in the list of links to start getting items from.
 
     /* Show the users what page they are on and how many pages there are. */
-    this.html.querySelector(".paginator-index").innerHTML = (new_index / this.limit + 1) + " of " + Math.ceil(this.links.length / this.limit);
+    //this.html.querySelector(".paginator-index").innerHTML = (new_index / this.limit + 1) + " of " + Math.ceil(this.links.length / this.limit);
 
     content_div = this.html.querySelector(".paginator-content");
     content_div.scrollTop = 0;// Whenever the page changes, scroll content to the top.

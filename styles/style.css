@@ -1,0 +1,28 @@
+* {
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  
+  }
+  
+  html { height:100%; width:100%; }
+  .title{
+    margin-left: 5%;
+  }
+
+ .flexContainer{
+    background-color:red;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 15em;
+    align-items: center
+ }
+
+.p-2{
+    background-color:blue;
+    flex: 1;
+    margin: 1px; 
+    height: 99%
+}
+
